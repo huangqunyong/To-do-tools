@@ -5,8 +5,8 @@
 <!-- mybatis-generator的核心配置文件 -->
 <generatorConfiguration>
 	
-  <classPathEntry location="D:\工具\2.后端\Maven\repository\mysql\mysql-connector-java\8.0.21\mysql-connector-java-8.0.21.jar" />
-  <context id="DB2Tables" targetRuntime="MyBatis3">
+  <classPathEntry location="C:\Users\Administrator\Desktop\mysql-connector-java-8.0.21.jar" />
+  <context id="DB2Tables" targetRuntime="MyBatis3Simple">
   	<!-- 用于自动生成的bean对象时，实现序列化接口 -->
   	<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
 	<!-- 用于自动生成的bean对象时，重写toString方法 -->
@@ -22,7 +22,7 @@
   
   	<!-- 如果要重新生成pojo类，务必改成项目组数据库，用户名密码 -->
     <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-        connectionURL="jdbc:mysql://127.0.0.1:3306/tdt"
+        connectionURL="jdbc:mysql://127.0.0.1:3306/tdt?serverTimezone=Asia/Shanghai"
         userId="root"
         password="root">
     </jdbcConnection>
@@ -52,9 +52,6 @@
 
 	
 	<!-- 映射配置 -->
-	<table tableName="tdl" domainObjectName="tdl">
-		<!-- 用于指定数据库数据类型转变为Java数据类型的方式 -->
-		<columnOverride column="content" javaType="java.lang.String" jdbcType="VARCHAR"></columnOverride>
-	</table>
+	<table tableName="tdl" domainObjectName="tdl"></table>
   </context>
 </generatorConfiguration>

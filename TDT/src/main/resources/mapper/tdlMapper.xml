@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hqy.demo.mapper.tdlMapper">
+  <resultMap id="BaseResultMap" type="com.hqy.demo.bean.tdl">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="starting_time" jdbcType="TIMESTAMP" property="startingTime" />
+    <result column="ending_time" jdbcType="TIMESTAMP" property="endingTime" />
+    <result column="priority" jdbcType="INTEGER" property="priority" />
+    <result column="details" jdbcType="LONGVARCHAR" property="details" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tdl
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hqy.demo.bean.tdl">
+    insert into tdl (id, creation_time, starting_time, 
+      ending_time, priority, details
+      )
+    values (#{id,jdbcType=INTEGER}, #{creationTime,jdbcType=TIMESTAMP}, #{startingTime,jdbcType=TIMESTAMP}, 
+      #{endingTime,jdbcType=TIMESTAMP}, #{priority,jdbcType=INTEGER}, #{details,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.hqy.demo.bean.tdl">
+    update tdl
+    set creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      starting_time = #{startingTime,jdbcType=TIMESTAMP},
+      ending_time = #{endingTime,jdbcType=TIMESTAMP},
+      priority = #{priority,jdbcType=INTEGER},
+      details = #{details,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, creation_time, starting_time, ending_time, priority, details
+    from tdl
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, creation_time, starting_time, ending_time, priority, details
+    from tdl
+  </select>
+</mapper>

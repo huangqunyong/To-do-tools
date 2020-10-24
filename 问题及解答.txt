@@ -40,4 +40,25 @@ characterEncoding=utf-8 指定字符编码
 	
 	（mysql数据库用的是gbk编码）
 	
-7.
+7.mybatis-generator的核心配置文件中
+<generatorConfiguration>
+  <classPathEntry location="C:\Users\Administrator\Desktop\mysql-connector-java-8.0.21.jar" />
+  路径存在中文会乱码，会出现以下报错
+  Failed to execute goal org.mybatis.generator:mybatis-generator-maven-plugin:1.3.5:generate (default-cli) on project TDT: Execution default-cli of goal org.mybatis.generator:mybatis-generator-maven-plugin:1.3.5:generate failed: Cannot resolve classpath entry: D:\宸ュ叿\2.鍚庣\Maven\repository\mysql\mysql-connector-java\8.0.21\mysql-connector-java-8.0.21.jar
+  
+8.@MapperScan("com.hqy.demo.mapper")
+作用：指定要变成实现类的接口所在的包，然后包下面的所有接口在编译之后都会生成相应的实现类，省去每个接口类上添加@Mapper
+
+9.mybatis-generator的核心配置文件中
+<generatorConfiguration>
+	<context id="DB2Tables" targetRuntime="MyBatis3Simple">
+	targetRuntime为MyBatis3时会生成*Example.java文件
+	
+10.eclipse如何设置注释格式
+Window->Preference->Java->Code Style->Code Template->Comments节点。 
+编辑Types里的内容就可以啦。
+
+11.泛型用于类上不需要类名前面加<?> 如：public class Message<T>
+用于方法返回值上需要声明泛型 如：public static <E>Message<E> sucess(E obj)
+
+12.
