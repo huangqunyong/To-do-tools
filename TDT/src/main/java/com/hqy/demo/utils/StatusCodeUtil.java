@@ -5,7 +5,7 @@ package com.hqy.demo.utils;
  * @Title: StatusCodeUtil.java
  * @Package com.hqy.demo.utils
  * @Description:错误状态码
- * @author Administrator
+ * @author hqy
  * @date 2020-10-23
  * @version V1.0
  */

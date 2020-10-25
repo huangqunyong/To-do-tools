@@ -3,22 +3,55 @@ package com.hqy.demo.bean;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.annotations.ApiParam;
+
 public class tdl implements Serializable {
     private Integer id;
 
+    @JsonIgnore
     private Date creationTime;
 
-    private Date startingTime;
+    @ApiParam(value = "开始时间")
+    private String startingTime;
 
-    private Date endingTime;
+    @ApiParam(value = "结束时间")
+    private String endingTime;
 
+    @ApiParam(value = "优先级")
     private Integer priority;
 
+    @ApiParam(value = "待办事项")//属性required = true 用于提示内容必须填写
     private String details;
 
     private static final long serialVersionUID = 1L;
+    
+    public tdl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-    public Integer getId() {
+	public tdl(String details, String startingTime, String endingTime, Integer priority) {
+		super();
+		this.details = details;
+		this.startingTime = startingTime;
+		this.endingTime = endingTime;
+		this.priority = priority;
+	}
+
+    public tdl(Integer id, Date creationTime, String startingTime, String endingTime, Integer priority,
+			String details) {
+		super();
+		this.id = id;
+		this.creationTime = creationTime;
+		this.startingTime = startingTime;
+		this.endingTime = endingTime;
+		this.priority = priority;
+		this.details = details;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -34,20 +67,20 @@ public class tdl implements Serializable {
         this.creationTime = creationTime;
     }
 
-    public Date getStartingTime() {
+    public String getStartingTime() {
         return startingTime;
     }
 
-    public void setStartingTime(Date startingTime) {
-        this.startingTime = startingTime;
+    public void setStartingTime(String startingTime) {
+        this.startingTime = startingTime == null ? null : startingTime.trim();
     }
 
-    public Date getEndingTime() {
+    public String getEndingTime() {
         return endingTime;
     }
 
-    public void setEndingTime(Date endingTime) {
-        this.endingTime = endingTime;
+    public void setEndingTime(String endingTime) {
+        this.endingTime = endingTime == null ? null : endingTime.trim();
     }
 
     public Integer getPriority() {

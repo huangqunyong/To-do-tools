@@ -5,7 +5,7 @@ package com.hqy.demo.utils;
  * @Title: CustomerException.java
  * @Package com.hqy.demo.utils
  * @Description:自定义异常
- * @author Administrator
+ * @author hqy
  * @date 2020-10-23
  * @version V1.0
  */

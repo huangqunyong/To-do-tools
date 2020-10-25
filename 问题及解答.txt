@@ -1,3 +1,5 @@
+提示：编号前面加！的代表未解决，加？代表未理解
+
 1.engine=InnoDB
 它提供了事务控制能力功能，它确保一组命令全部执行成功，或者当任何一个命令出现错误时所有命令的结果都被回退。
 
@@ -61,4 +63,13 @@ Window->Preference->Java->Code Style->Code Template->Comments节点。
 11.泛型用于类上不需要类名前面加<?> 如：public class Message<T>
 用于方法返回值上需要声明泛型 如：public static <E>Message<E> sucess(E obj)
 
-12.
+12.前端Input标签type属性的datetime传给后端的数据类型是String而不是Date
+
+？13.报错:Cannot determine value type from string 'xxxxxx'
+字段和属性对不上
+问题：逆向工程怎么会出现这个问题，怎么会对不上，但是加了无参构造方法和全参构造器却能行，迷
+
+14.
+
+
+
